@@ -105,9 +105,9 @@ function CreateUser($region) {
         REG ADD "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /V "DefaultPassword" /t REG_SZ /d "" /F
     }elseif($region -eq "CHIEFS"){
         Write-Host "Creating the chiefs User"
-        net user /add chiefs gochiefsgo!
-        net user chiefs /passwordchg:no
-        net user chiefs /expires:never
+        net user /add user password
+        net user user /passwordchg:no
+        net user user /expires:never
     }else{
         Write-Host "Creating the TW User"
         net user /add tw *
